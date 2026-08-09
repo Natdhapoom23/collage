@@ -10,7 +10,7 @@ if (globalForPrisma.prisma) {
 } else {
   // Check if we are running in the browser
   if (typeof window === 'undefined') {
-    const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL! });
+    const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
     prisma = new PrismaClient({ adapter, log: ['query'] });
   } else {
     // This is just a fallback for types if accidentally imported on client
